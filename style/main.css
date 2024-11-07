@@ -1,0 +1,562 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    width: 97vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 5% 40% repeat(2,25%);
+    gap: 4%;
+}
+#menu{
+    position: absolute;
+    top:0;
+    left:0;
+    width:80%;
+    height: 100%;
+    background-color: white;
+    display: none;
+    grid-template-rows: repeat(auto-fill,minmax(0,10%));
+    z-index: 100;
+    
+}
+#menu > *{
+    color: black;
+    text-decoration: none;
+}
+#cartInfo{
+    position: absolute;
+    left:2%;
+    top:10%;
+    height:33%;
+    width:96%;
+    background-color:white;
+    display:none;
+    grid-template-rows: auto 60%;
+    grid-template-columns: 90%;
+    justify-content: space-between;
+    border: 1px solid inherit;
+    border-radius: 2.5%;
+
+}
+#cartInfo #title{
+    position: relative;
+    top:20%;
+    left:10%;
+}
+#cartInfo #emptyCart{
+    grid-row:2;
+    grid-column: 1;
+    display: none;
+    height: 80%;
+    justify-self: center;
+    align-self: end;
+    justify-content: center;
+    align-content: start;
+}
+#cartInfo #filledCart{
+    grid-row: 2;
+    grid-column: 1;
+    align-self:start;
+    justify-self: center;
+    display: none;
+    grid-template-rows: 50% 40%;
+    height: 90%;
+    width: 90%;
+    gap:10%;
+    position: relative;
+    bottom: 10%;
+    
+    
+}
+#cartInfo #filledCart #info{
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-auto-flow: column;
+    min-height: 0;
+    max-height: 100%;
+    gap:5%;
+
+    
+}
+
+#cartInfo #filledCart #info  > img{
+    display: inline-block;
+    min-height: 0;
+    height: 100%;
+    max-height: 100%;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+}
+#cartInfo #filledCart #info #item{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 94% 1fr;
+    gap:2%;
+    min-height: 0;
+    max-height: 100%;
+    line-height: 1.5;
+    
+}
+#cartInfo #filledCart #info #item > img{
+    align-self: center;
+}
+#cartInfo button{
+background-color:orange;
+border: 1px solid inherit;
+border-radius: 3%;
+}
+#lightBox{
+    display: none;
+}
+nav{
+    display: grid;
+    grid-template-columns: 60% 20%;
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    
+    
+   
+    
+}
+nav > *{
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: visible;
+    align-content: center;
+    
+}
+
+#leftNav{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 25% 70%;
+    gap: 4%;
+    
+    
+   
+}
+#navLinks{
+    display: grid;
+    min-height: 0;
+    max-height: 50%;
+    align-self: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 30%;
+    
+}
+#navLinks > a{
+    display:none;
+    z-index: 7;
+    
+}
+#sneakers{
+    font-size: 2em;
+
+}
+#rightNav{
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content:space-around;
+    align-items: center;
+
+    
+}
+#avatar{
+    max-width: 75%;
+    max-height: 75%; 
+}
+#cartCounter{
+    position: absolute;
+    min-width: 30%;
+    width:max-content;
+    max-width: 50%;
+    height:55%;
+    left:20%;
+    top:-7%;
+    background-color: chocolate;
+    border: 1px solid inherit;
+    border-radius: 50% / 100%;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-content: center;
+    font-size: 80%;
+    display: none;
+}
+#product{
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(80%,100%) auto;
+    gap: 2%;
+}
+#product #imgs{
+    
+    border-radius: 2.5%;
+    
+}
+#product #imgs img{
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    display: none;
+}
+#product #thumbs{
+
+    min-height: 0;
+    max-height: 100%;
+    display: none;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(0,1fr));
+    grid-auto-flow: column;
+    gap: 2%;
+}
+#product #thumbs img{
+    min-width: 0;
+    width: 100%;
+    min-height: 0;
+    height:100%;
+    border-radius: 5%;
+    
+}
+#prev , #next{
+    position: absolute;
+    background-color: white;
+    border-radius:  50%;
+    top:45%;
+    aspect-ratio:1;
+    
+    height:12%;
+    width:8%;
+    
+    display: grid;
+    place-items: center;
+    
+}
+#prev {
+    left:3%;
+}
+#next{
+    right:3%;
+}
+#prev img , #next img{
+    width:40%;
+    height:40%;
+}
+#companyProfile{
+    display: grid;
+}
+#companyProfile #title{
+    line-height: 1.5;
+    color: gray;
+}
+#companyProfile #content{
+    margin-top: 2%;
+    color:grey;
+}
+#cart{
+    display: grid;
+    grid-template-rows: repeat(3,minmax(0,1fr));
+    align-content: center;
+    gap:4%;
+    
+}
+#cart > *{
+    
+    display: grid;
+    align-content: center;
+}
+#cart #priceSection{
+    display: grid;
+    grid-template-columns: 50% 30%;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+#cart #priceSection #firstHalf{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-auto-flow: column;
+    gap: 2%;
+}
+#cart #priceSection #firstHalf #price{
+    font-size: x-large;
+    display: grid;
+    align-content: center;
+}
+#cart #priceSection #firstHalf #percentage{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    color:white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5%;
+}
+#cart #priceSection #secondHalf{
+    display: grid;
+    justify-content: end;
+    align-content: center;
+    color: gray;
+    text-decoration: line-through;
+}
+#cart #controlAmount{
+    display: grid;
+    grid-template-columns: repeat(3,5%);
+    grid-auto-flow: column;
+    justify-content: space-around;
+    align-content: center;
+    gap: 22.5%;
+    background-color:whitesmoke;
+}
+#cart button{
+    background-color:rgb(234, 147, 6);
+    display: grid;
+    align-content: center;
+    grid-auto-flow: column;
+    grid-template-columns: 10% 20%;
+    justify-content: center;
+}
+#cart button > *{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: middle;
+    
+    height: 80%;
+}
+@media (min-width: 800px){
+    body{
+        width:94%;
+        margin: auto;
+        grid-template-rows: 10%  35% 20% 1fr;
+        grid-template-columns: 40% 45%;
+        column-gap: 10%;
+        row-gap: 10%;
+        grid-template-areas: "nav nav" "product profile" "product buy" "rest rest";
+    }
+    #cartInfo{
+        width:35%;
+        left:60%;
+        grid-template-rows: 40% 50%;
+        border-color:whitesmoke;
+        
+    }
+    #cartInfo #filledCart{
+        height:120%;
+        bottom: 5%;
+    }
+    #cartInfo #filledCart #info #item{
+       line-height: 1.3;
+       font-size: 95%;
+    }
+    #lightBox{
+        --orange-filter:  invert(40%) sepia(74%) saturate(5303%)
+        hue-rotate(2deg) brightness(103%) contrast(107%);
+        position: absolute;
+        display: grid;
+        justify-self: center;
+        z-index: 150;
+        grid-template-rows: 3% 70% 20%;
+        row-gap: 3%;
+        justify-content: center;
+        grid-template-columns: 90%;
+        background-color: transparent;
+        width:40%;
+        height: 80%;
+        left:27%;
+        top:7%;
+    }
+    #lightBox #close{
+        justify-self: end;
+        
+
+    }
+    #lightBox #close:hover{
+        filter:  var(--orange-filter);
+    }
+    #lightBox #imgs{
+    
+        border-radius: 5%;
+        
+    }
+    #lightBox #imgs img{
+        height: 100%;
+        width: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        display: none;
+        border-radius: 2.5%;
+    }
+    #lightBox #thumbs{
+        margin-top: 2%;
+        min-height: 0;
+        max-height: 100%;
+        width:90%;
+        justify-self: center;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(auto-fit,minmax(0,1fr));
+        grid-auto-flow: column;
+        gap: 4%;
+    }
+    #lightBox #thumbs img{
+        min-width: 0;
+        width: 100%;
+        min-height: 0;
+        height:100%;
+        border-radius: 5%;
+        
+    }
+    #lightBox #prev{
+       left:0.5%;
+       top:38%;
+       height: 10%;
+    }
+     #lightBox #next{
+       right:0.5%;
+       top:38%;
+       height:10%;
+     }
+     #lightBox #prev img:hover , #lightBox #next img:hover{
+         filter: var(--orange-filter);
+     }
+    nav{
+        grid-area: nav;
+        grid-template-columns: 80% 15%;
+        border-bottom: 1px solid wheat;
+    }
+    #leftNav {
+        grid-auto-flow: column;
+        grid-template-columns: 17% 1fr;
+        grid-template-areas: 'sneakers menu';
+        column-gap: 5%;
+
+    }
+    #leftNav #navLinks > img{
+        display: none;
+    }
+    #leftNav #sneakers{
+        grid-area: sneakers;
+    }
+    #leftNav #navLinks{
+        grid-area: menu;
+        column-gap: 5%;
+    }
+    #leftNav #navLinks #menu{
+        display: grid;
+        position: initial;
+        height: 220%;
+        grid-template-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(auto-fit,1fr);
+        grid-auto-flow: column;
+        column-gap: 3%;
+        justify-content: space-evenly;
+        align-content: stretch;
+        
+        
+    }
+    #leftNav #navLinks #menu > a{
+        
+        height: 100%;
+    }
+    #leftNav #navLinks #menu > a:hover {
+        border-bottom: 1px solid orangered;
+    }
+    #leftNav #navLinks #menu > img{
+        display: none;
+    }
+    #cartCounter{
+        max-height: 35%;
+        width:5%;
+        max-width: 5%;
+        top:15%;
+        
+    }
+    #product {
+        grid-area: product;
+        grid-template-rows: 75% 1fr;
+        row-gap: 4%;
+        height: 120%;
+        align-self: center;
+
+    }
+    #product #prevAndNext{
+        display: none;
+    }
+    #product #imgs img{
+        
+    }
+    #product #thumbs{
+        display: grid;
+    }
+    #companyProfile{
+        
+        grid-area: profile;
+        margin-bottom: -3%;
+        display: grid;
+        align-content: center;
+        row-gap: 5%;
+        
+        
+        
+        
+    }
+    #companyProfile #title{
+        line-height: 1.2;
+    }
+    #companyProfile #edition{
+        font-size: 2.7em;
+        line-height: 1;
+    }
+    #companyProfile #content{
+        font-size: 1.3em;
+        line-height: 1.2;
+        margin-top: 1.5%;
+    }
+    #cart{
+        
+        grid-area: buy;
+        align-content: start;
+        margin-top: 1%;
+        grid-template-rows: 55% 1fr;
+        grid-template-columns: 30% 1fr;
+        row-gap: 5%;
+        column-gap: 2%;
+        grid-template-areas: "price price" "controlAmount addToCart";   
+    }
+    #cart #priceSection{
+        grid-area: price;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row;
+        justify-content: start;
+        justify-items: start;
+        column-gap: 2%;
+        
+    }
+    #cart #priceSection #percentage{
+        grid-auto-flow: column;
+        align-self: center;
+        justify-content: center;
+        
+    }
+    #cart #secondHalf{
+        grid-row: 2;
+        justify-self: start;
+    }
+    #cart button{
+        column-gap: 3%;
+    }
+    
+   
+
+}

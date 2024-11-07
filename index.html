@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link href="./style/main.css" rel="stylesheet">
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<nav>
+  <div id="leftNav">
+  <div id="navLinks">
+  <img src="./images/icon-menu.svg" onclick="toggleMenu(event,true)">
+  <div id="menu">
+      <img src="./images/icon-close.svg" onclick="toggleMenu(event,false)">
+      <a href="#">
+        Collections
+        </a>
+        <a href="#">
+        Men
+        </a>
+        <a href="#">
+        Women
+        </a>
+      <a href="#">
+        About
+      </a> 
+      <a href="#">
+        Contact
+      </a>
+    </div>
+  </div>
+  <div id="sneakers">
+    Sneakers
+  </div>
+</div>
+<div id="rightNav">
+  
+  <img src="./images/icon-cart.svg" id="cartImg"
+  onclick="toggleCartInfo(event)"
+  >
+
+
+  <img src="./images/image-avatar.png" id="avatar">
+  <div id="cartCounter">0</div>
+
+</div>
+  </nav>
+  <section id="product">
+   <div id="imgs">
+     <img src="images/image-product-1.jpg" 
+     onclick="showLightBox(event)"
+      style="display:initial;">
+     <img onclick="showLightBox(event)"
+      src="images/image-product-2.jpg" >
+     <img onclick="showLightBox(event)"
+      src="images/image-product-3.jpg" >
+     <img onclick="showLightBox(event)"
+      src="images/image-product-4.jpg" >
+
+   </div>
+   <div id="thumbs">
+    <img src="images/image-product-1-thumbnail.jpg" 
+    onclick="changeProductImg(event,0)">
+    <img src="images/image-product-2-thumbnail.jpg"
+    onclick="changeProductImg(event,1)">
+    <img src="images/image-product-3-thumbnail.jpg"
+     onclick="changeProductImg(event,2)">
+    <img src="images/image-product-4-thumbnail.jpg" 
+    onclick="changeProductImg(event,3)">
+   </div>
+   <div id="prevAndNext">
+     <div id="prev" onclick="prevProductImg(event)">
+       <img src="images/icon-previous.svg">
+     </div>
+     <div id="next" onclick="nextProductImg(event)"> 
+      <img src="images/icon-next.svg">
+     </div>
+
+   </div>
+  </section>
+ <section id="companyProfile">
+   
+  <strong id="title">Sneaker Company<br></strong>
+  
+  
+  <strong id="edition">
+  Fall Limited Edition<br> Sneakers<br></strong>
+  
+  <div id="content">
+  These low-profile sneakers are your perfect casual wear companion. Featuring a 
+  durable rubber outer sole, they’ll withstand everything the weather can offer.
+  </div>
+  </section>
+ <section id="cart">
+  <div id="priceSection">
+    <div id="firstHalf">
+      <strong id="price">
+      $125.00
+      </strong>
+      <div id="percentage">
+      50%
+      </div>
+    </div>
+    <div id="secondHalf">
+     $250.00
+    </div>
+      
+  </div>
+ <div id="controlAmount">
+   <div>
+   <img src="./images/icon-minus.svg"
+   onclick="decItemCount(event)"
+   >
+   </div>
+  <div id="amount"> 
+  0
+  </div>
+  <div>
+  <img src="./images/icon-plus.svg"
+  onclick="incItemCount(event)"
+  >
+  </div>
+ </div>
+  <button onclick="addToCart(event)">
+    <div>
+     <img src="./images/icon-cart.svg">
+     </div>
+     <div>
+      Add to cart
+     </div>
+  </button>
+ 
+  </section>
+  <section id="cartInfo">
+    <div id="title">Cart</div>
+    <div id="emptyCart">Your cart is empty</div>
+    <div id="filledCart">
+      <div id="info">
+        
+        <img src="./images/image-product-1-thumbnail.jpg">
+        
+      
+        <div id="item">
+          <div id="text">
+          Fall limited edition sneakers<br>
+          $125.00 &nbsp; x &nbsp;3
+          &nbsp;$375.00
+          </div>
+          <img src="./images/icon-delete.svg">
+        </div>
+
+      </div>
+      <button>check out</button>
+
+    </div>
+
+  </section>
+  <section id="lightBox">
+    <img src="images/icon-close.svg"
+    onclick="hideLightBox(event)"
+     id="close">
+    <div id="imgs">
+      <img src="images/image-product-1.jpg"  style="display:initial;">
+      <img src="images/image-product-2.jpg" >
+      <img src="images/image-product-3.jpg" >
+      <img src="images/image-product-4.jpg" >
+ 
+    </div>
+    <div id="thumbs">
+     <img src="images/image-product-1-thumbnail.jpg" 
+     onclick="changeLightBoxImg(event,0)">
+     <img src="images/image-product-2-thumbnail.jpg"
+     onclick="changeLightBoxImg(event,1)">
+     <img src="images/image-product-3-thumbnail.jpg"
+      onclick="changeLightBoxImg(event,2)">
+     <img src="images/image-product-4-thumbnail.jpg" 
+     onclick="changeLightBoxImg(event,3)">
+    </div>
+    <div id="prevAndNext">
+      <div id="prev" onclick="prevLightBoxImg(event)">
+        <img src="images/icon-previous.svg">
+      </div>
+      <div id="next" onclick="nextLightBoxImg(event)"> 
+       <img src="images/icon-next.svg">
+      </div>
+ 
+    </div>
+   </section>
+ 
+<script src="javascript/main.js"></script>
+</body>
+</html>
